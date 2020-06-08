@@ -1,0 +1,28 @@
+<div class="container-home">
+  <% if current_user == nil %>
+    <button class="btn-todo btn-center bg shadow inv-shadow"><%= link_to "TO-DO LIST", todolist_index_path %></button>
+  <% else %>
+    <button class="btn-todo btn-center bg shadow inv-shadow"><%= link_to "TO-DO LIST", todolist_path(current_user.id) %></button>
+  <% end %>
+    <button class="btn-reminder btn-center bg shadow inv-shadow"><%= link_to "Bloc notes", block_index_path %></button>
+
+
+  <div class="middle">
+        <a class="btn-s" href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="btn-s" href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class="btn-s" href="#">
+          <i class="fab fa-google"></i>
+        </a>
+        <a class="btn-s" href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn-s" href="#">
+          <i class="fab fa-youtube"></i>
+        </a>
+  </div>
+</div>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RememberList</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->  
+  <body>
+    <%= render 'layouts/navbar' %>
+    <%= yield %>
+    <% if user_signed_in? %>
+      <form id="background-color">
+        <% if User.find_by(id:current_user.id).preference != nil %>
+          <input type="text" value="<%= User.find_by(id:current_user.id).preference.background %>" name = 'inputValue' class="bg bg-input" id="bg-input">
+        <% else %>
+          <input type="text" value='#18191f' name = 'inputValue' class="bg bg-input" id="bg-input">
+        <% end %>
+      </form>
+    <% else %>
+      <form id="background-color">
+        <input type="text" value="#18191f" name = 'inputValue' class="bg bg-input" id="bg-input">
+      </form>
+    <% end %>
+  </body>
+  <%= javascript_include_tag 'custom.js' %>
+</html>

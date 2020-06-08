@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg">
+    <a class="navbar-brand" href="<%= root_path %>">REMINDYOU</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+    <ul class="navbar-nav d-flex justify-content-end mt-2">
+    <% if user_signed_in? %>
+      <li class="sign-out bg shadow inv-shadow">
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      </li>
+
+      <li class="edit bg shadow inv-shadow">
+        <%= link_to "Edit", edit_user_registration_path %>
+      </li>
+
+      <% if  User.find_by(id:current_user.id).preference != nil %>
+          <li class="pref bg shadow inv-shadow">Preferences</li>
+      <% end %>
+      <% if  User.find_by(id:current_user.id).preference == nil %>
+          <li class="pref bg shadow inv-shadow">
+            <%= link_to "Preferences", new_preference_path %>
+          </li>
+      <% end %>
+
+    <% else %>
+      <li class="sign-in bg shadow inv-shadow">    
+        <%= link_to "Sign in", new_user_session_path %>
+      </li>
+
+      <li class="sign-up bg shadow inv-shadow">
+        <%= link_to "Sign up", new_user_registration_path %>
+      </li>
+
+    <% end %>
+  </ul>
+    </div>
+  </nav>
+
+  # <%= link_to "Preferences", edit_preference_path(current_user.id) %>

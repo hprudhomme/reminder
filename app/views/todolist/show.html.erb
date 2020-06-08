@@ -1,0 +1,30 @@
+<% if  User.find_by(id:current_user.id).todolist == nil %>
+    <h1 class="title-todo text-center"><span></span>TO-DO LIST</h1>
+    <%= form_tag url_for(action:'create'), method: "post" do %>
+        <div class="text-center">
+            <%= submit_tag("Créer", class: "bg btn-create-todo") %>
+        </div>
+    <% end %>
+<% else %>
+    <h1 class="title-todo text-center"><span></span>TO-DO LIST</h1>
+    <div class="todo-container">
+        <%= form_tag todolist_task_index_path(User.find_by(id:current_user.id).todolist.id), method: "post" do %>
+            <input type="hidden" name="authenticity_token" value= <%= form_authenticity_token %> >
+            <%= text_field_tag :task, "",placeholder: 'Ajouter une tâche', class: 'todo-input bg'%>
+        <% end %>
+        <ul>
+            <% @tasks.each_with_index do |task, k| %>
+                <li><p id="c<%= k %>"><%= task.content %></p>
+                    <span class="d-flex">
+                        <%= form_tag todolist_task_path(User.find_by(id:current_user.id).todolist.id, task.id), id: 'form'+k.to_s, class: 'checkbox', method: "patch" do %>
+                            <%= check_box_tag 'tos', 'yes', task.done, class: 'accept_tos', id: k %>
+                        <% end %>
+                        <%= form_tag todolist_task_path(User.find_by(id:current_user.id).todolist.id, task.id), class:'bzz', method: "delete" do %>
+                            <%= submit_tag "X", class: 'btn-remove-task'%>
+                        <% end %>
+                    </span>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

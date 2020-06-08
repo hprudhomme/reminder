@@ -1,0 +1,232 @@
+// Place all the styles related to the bloc_notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.bloc-note{
+    margin-top: 3em;
+}
+
+.add-categorie{
+    // background-color: #00D9C0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: white;
+    border-radius: 50px;
+    background: #18191f;
+    box-shadow: -4px -4px 3px rgba(255,255,255,0.05),
+                5px 5px 3px rgba(0,0,0,0.2)
+}
+
+.add-categorie:hover{
+    border-radius: 50px;
+    background: #18191f;
+    box-shadow: inset -4px -4px 3px rgba(255,255,255,0.05),
+                inset 5px 5px 3px rgba(0,0,0,0.2);
+    // color: black;
+    cursor: pointer;
+}
+
+.list{
+     height: 0px;
+     position: relative;
+     overflow: hidden;
+     background: #18191f;
+     border-bottom-left-radius: 50px;
+     border-bottom-right-radius: 50px;
+     margin-top: -10px;
+     box-shadow: -4px -4px 3px rgba(255,255,255,0.05),
+                5px 5px 3px rgba(0,0,0,0.2)
+ }
+
+ .list-title{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 50px;
+    background: #18191f;
+    box-shadow: -4px -4px 3px rgba(255,255,255,0.05),
+                5px 5px 3px rgba(0,0,0,0.2);
+}
+
+.list-title:hover{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
+ .list-title:hover + .list{
+     height: auto;
+ }
+
+ .list:hover{
+     height: auto;
+ }
+
+ .list:hover > .list-title{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+.container-fluide{
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.col-3{
+    padding: 0px;
+}
+
+ul{
+    padding-left: 0px;
+}
+.list li{
+    // border-bottom: 1px solid #00D9C0;
+    // border-top: 1px solid #00D9C0;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    margin-top: 10px;
+    margin-left: 1em;
+    margin-right: 1em;
+    list-style: decimal;
+    padding-left: 0.1em;
+    color: white;
+    padding-left: 1em;border-radius: 50px;
+    background: #18191f;
+    box-shadow: inset -2px -2px 3px rgba(255,255,255,0.05),
+                inset 3px 3px 3px rgba(0,0,0,0.2)
+}
+
+.list li .btn-delete{
+    border: none;
+    color: white;
+    height: 0.7;
+    border-radius: 50px;
+    background: #18191f;
+    box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+                3px 3px 3px rgba(0,0,0,0.2)
+}
+
+.list li .btn-delete:hover{
+    border-radius: 50px;
+    background: #18191f;
+    box-shadow: inset -4px -4px 3px rgba(255,255,255,0.05),
+                inset 5px 5px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+.note-input{
+    height:2.7rem;
+    width:55%;
+    vertical-align:text-top;
+    margin-left:13%;
+    margin-bottom:1em;
+    padding-top:0.5em;
+    padding-left:12px;
+    border:none;background:#18191f;
+    color:white;
+    box-shadow: inset -2px -2px 3px rgba(255,255,255,0.05),
+                inset 3px 3px 3px rgba(0,0,0,0.2);border-radius: 50px;
+}
+
+.note-input:focus{
+    outline: none;
+}
+
+
+.btn-add-note{
+    color: white;
+    width: 20%;
+    text-align: center;
+    padding: 10px 1%;
+    margin-top: 1.3em;
+    border-radius: 50px;
+    background: #18191f;
+    box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+                3px 3px 3px rgba(0,0,0,0.2)  
+}
+
+.btn-add-note:hover{
+    box-shadow: inset -4px -4px 3px rgba(255,255,255,0.05),
+                inset 5px 5px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.btn-delete-cat{
+    border: none;
+    color: white;
+    margin-left: 25.5%;
+    margin-bottom: 1.5em;
+    margin-top: 0.7em;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 45%;
+    border-radius: 50px;
+    background: #18191f;
+    box-shadow: -2px -2px 3px rgba(255,255,255,0.05),
+                3px 3px 3px rgba(0,0,0,0.2)
+}
+
+.btn-delete-cat:hover{
+    box-shadow: inset -4px -4px 3px rgba(255,255,255,0.05),
+                inset 5px 5px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+
+//modal
+
+.modal-content{
+    background-color: #eaeaea;
+}
+
+#exampleModalLongTitle{
+    margin: 0 auto;
+}
+
+.modal-title{
+    border-radius: 50px;
+    background-color: #eaeaea;
+    border: none;
+    width: 50%;
+    height: 3em;
+    padding-left: 1em;
+    margin: 0 auto 1em auto;
+    box-shadow:inset 4px 4px 4px rgba(0,0,0,0.8),
+               inset -4px -4px 4px rgba(255,255,255,1);
+}
+
+.modal-color{
+    background-color: #eaeaea;
+    border-radius: 50px;
+    border: none;
+    width: 50%;
+    height: 3em;
+    padding-left: 1em;
+    margin: 0 auto 1em auto;
+    box-shadow:inset 4px 4px 4px rgba(0,0,0,0.8),
+               inset -4px -4px 4px rgba(255,255,255,1);
+}
+
+.modal-color:focus{
+    outline: none;
+}
+
+.modal-title:focus{
+    outline: none;
+}
+
+.btn-modal{
+    width: 30%;
+    background-color: #eaeaea;
+    border-radius: 50px;
+    border: none;
+    margin: 0 auto;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.8),
+                -4px -4px 4px rgba(255,255,255,1);
+}
+
+.btn-modal:hover{
+    box-shadow:inset 4px 4px 4px rgba(0,0,0,0.8),
+               inset -4px -4px 4px rgba(255,255,255,1);
+}

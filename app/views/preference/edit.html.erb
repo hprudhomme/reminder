@@ -1,0 +1,15 @@
+<center>
+    <%= form_tag url_for(action:'update'), method: "patch" do %>
+
+      <%= label_tag 'Backgroun-color' %><br>
+      <%= text_field_tag 'bg'  %>
+      <br /> <br />
+
+      <%= label_tag 'Text-color' %><br>
+      <%= text_area_tag 'colo' %>
+      <br /> <br />
+
+      <%= submit_tag "Edit preferences" %>
+
+    <% end %>
+</center>
